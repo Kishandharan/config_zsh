@@ -34,6 +34,7 @@ require("lazy").setup({
   { 'rcarriga/nvim-notify' },
   { 'folke/noice.nvim' },
   { 'akinsho/bufferline.nvim', version = "*", dependencies = { 'nvim-tree/nvim-web-devicons' }},
+  { 'oxfist/night-owl.nvim' }
 })
 
 -- Configuring plugins, tweak these as you want
@@ -103,8 +104,6 @@ require('tokyonight').setup({
 require('lualine').setup {
   options = {
     theme = 'tokyonight',
-    --section_separators = { left = '', right = '' }, 
-    --component_separators = { left = '', right = '' },
      section_separators = { left = '', right = '' },
     component_separators = { left = '', right = '' },
   }
@@ -204,7 +203,8 @@ vim.opt.autoindent = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
-vim.cmd.colorscheme("tokyonight")
+vim.cmd.colorscheme("tokyonight-night")
+vim.opt.fillchars = { eob = " " }
 vim.cmd('set number')
 vim.o.showmode = false
 vim.o.showtabline = 2
