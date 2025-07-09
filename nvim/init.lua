@@ -27,14 +27,13 @@ require("lazy").setup({
   { 'ibhagwan/fzf-lua' },
   { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
   { 
-    'folke/tokyonight.nvim',
+    'tiagovla/tokyodark.nvim',
     lazy = false,
     priority = 1000,
   },
   { 'rcarriga/nvim-notify' },
   { 'folke/noice.nvim' },
   { 'akinsho/bufferline.nvim', version = "*", dependencies = { 'nvim-tree/nvim-web-devicons' }},
-  { 'oxfist/night-owl.nvim' }
 })
 
 -- Configuring plugins, tweak these as you want
@@ -43,6 +42,16 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.o.laststatus = 3
 vim.opt.shortmess:append("I")
+
+require("tokyodark").setup({
+  styles = {
+    comments = { italic = false },
+    keywords = { italic = false },
+    identifiers = { italic = false },
+    functions = { italic = false },
+    variables = { italic = false },
+  },
+})
 
 require('neo-tree').setup({
   close_if_last_window = true,
@@ -89,24 +98,21 @@ cmp.setup({
   },
 })
 
-require('tokyonight').setup({
-  style = "night",
-  transparent = false,
-  terminal_colors = true,
-  styles = {
-    comments = { italic = false },
-    keywords = { italic = false },
-  },
-  sidebars = "dark",
-  floats = "dark",
-})
 
 require('lualine').setup {
   options = {
-    theme = 'tokyonight',
+    theme = 'tokyodark',
      section_separators = { left = '', right = '' },
     component_separators = { left = '', right = '' },
-  }
+  },
+  sections = {
+    lualine_a = {'mode'},   
+    lualine_b = {'filename'},
+    lualine_c = {},        
+    lualine_x = {},       
+    lualine_y = {},      
+    lualine_z = {'location'},
+  },
 }
 
 require('nvim-treesitter.configs').setup {
@@ -196,6 +202,7 @@ vim.keymap.set('n', '<Leader>f', ':FzfLua files<CR>', opts)
 vim.keymap.set('n', '<Leader>e', ':Neotree toggle<CR>', opts)
 vim.keymap.set('n', '<Leader>w', ':w<CR>', opts)
 vim.keymap.set('n', '<Leader>l', ':Lazy<CR>', opts)  
+vim.keymap.set('n', '<Leader>n', ':nohl<CR>', opts)  
 
 -- Configuring general nvim settings, tweak these as you want
 vim.opt.termguicolors = true
@@ -203,7 +210,7 @@ vim.opt.autoindent = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
-vim.cmd.colorscheme("tokyonight-night")
+vim.cmd.colorscheme("tokyodark")
 vim.opt.fillchars = { eob = " " }
 vim.cmd('set number')
 vim.o.showmode = false
