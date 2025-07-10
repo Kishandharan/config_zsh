@@ -42,6 +42,7 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.o.laststatus = 3
 vim.opt.shortmess:append("I")
+vim.cmd("set ignorecase")
 
 require("tokyodark").setup({
   styles = {
@@ -202,7 +203,11 @@ vim.keymap.set('n', '<Leader>f', ':FzfLua files<CR>', opts)
 vim.keymap.set('n', '<Leader>e', ':Neotree toggle<CR>', opts)
 vim.keymap.set('n', '<Leader>w', ':w<CR>', opts)
 vim.keymap.set('n', '<Leader>l', ':Lazy<CR>', opts)  
-vim.keymap.set('n', '<Leader>n', ':nohl<CR>', opts)  
+vim.keymap.set('n', '<Leader>n', ':nohl<CR>', opts) 
+
+vim.keymap.set('n', '<Leader><C-b>', '0', opts)  
+vim.keymap.set('n', '<Leader><C-e>', '$', opts)  
+vim.keymap.set('n', '<Leader><C-m>', '%', opts)  
 
 -- Configuring general nvim settings, tweak these as you want
 vim.opt.termguicolors = true
