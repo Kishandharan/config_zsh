@@ -34,6 +34,7 @@ require("lazy").setup({
   { 'rcarriga/nvim-notify' },
   { 'folke/noice.nvim' },
   { 'akinsho/bufferline.nvim', version = "*", dependencies = { 'nvim-tree/nvim-web-devicons' }},
+  { 'folke/flash.nvim' }
 })
 
 -- Configuring plugins, tweak these as you want
@@ -210,6 +211,10 @@ vim.keymap.set('n', '<Leader><C-e>', '$', opts)
 vim.keymap.set('n', '<Leader><C-m>', '%', opts)  
 vim.keymap.set('n', '<Leader><C-n>', '}', opts)  
 vim.keymap.set('n', '<Leader><C-p>', '{', opts)  
+
+vim.keymap.set({ "n", "x", "o" }, "s", function()
+  require("flash").jump()
+end, { desc = "Flash jump" })
 
 -- Configuring general nvim settings, tweak these as you want
 vim.opt.termguicolors = true
