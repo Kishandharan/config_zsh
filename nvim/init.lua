@@ -26,15 +26,11 @@ require("lazy").setup({
   { 'nvim-lualine/lualine.nvim' },
   { 'ibhagwan/fzf-lua' },
   { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
-  { 
-    'tiagovla/tokyodark.nvim',
-    lazy = false,
-    priority = 1000,
-  },
   { 'rcarriga/nvim-notify' },
   { 'folke/noice.nvim' },
   { 'akinsho/bufferline.nvim', version = "*", dependencies = { 'nvim-tree/nvim-web-devicons' }},
-  { 'folke/flash.nvim' }
+  { 'folke/flash.nvim' },
+  { 'folke/tokyonight.nvim' },
 })
 
 -- Configuring plugins, tweak these as you want
@@ -45,13 +41,15 @@ vim.o.laststatus = 3
 vim.opt.shortmess:append("I")
 vim.cmd("set ignorecase")
 
-require("tokyodark").setup({
+require("tokyonight").setup({
+  style = "night",
   styles = {
-    comments = { italic = false },
-    keywords = { italic = false },
-    identifiers = { italic = false },
-    functions = { italic = false },
-    variables = { italic = false },
+      comments = { italic = false },
+      keywords = { italic = false },
+      functions = { bold = false },
+      variables = { bold = false },
+      sidebars = "dark",
+      floats = "dark",
   },
 })
 
@@ -103,7 +101,7 @@ cmp.setup({
 
 require('lualine').setup {
   options = {
-    theme = 'tokyodark',
+    theme = 'tokyonight',
      section_separators = { left = '', right = '' },
     component_separators = { left = '', right = '' },
   },
@@ -222,7 +220,7 @@ vim.opt.autoindent = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
-vim.cmd.colorscheme("tokyodark")
+vim.cmd.colorscheme("tokyonight")
 vim.opt.fillchars = { eob = " " }
 vim.cmd('set number')
 vim.o.showmode = false
