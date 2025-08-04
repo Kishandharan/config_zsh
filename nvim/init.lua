@@ -51,6 +51,13 @@ require("tokyonight").setup({
       sidebars = "dark",
       floats = "dark",
   },
+  on_colors = function(colors)
+      colors.bg = "#02031f" -- set your desired hex color here
+  end,
+  on_highlights = function(hl, colors)
+      hl.NeoTreeNormal = { bg = colors.bg }
+      hl.NeoTreeNormalNC = { bg = colors.bg }
+  end,
 })
 
 require('neo-tree').setup({
