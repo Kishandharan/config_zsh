@@ -31,7 +31,6 @@ require("lazy").setup({
   { 'akinsho/bufferline.nvim', version = "*", dependencies = { 'nvim-tree/nvim-web-devicons' }},
   { 'folke/flash.nvim' },
   { 'folke/tokyonight.nvim' },
-  { 'xiyaowong/transparent.nvim' }
 })
 
 -- Configuring plugins, tweak these as you want
@@ -43,6 +42,7 @@ vim.opt.shortmess:append("I")
 vim.cmd("set ignorecase")
 
 require("tokyonight").setup({
+  transparent = true,
   style = "night",
   styles = {
       comments = { italic = false },
@@ -51,6 +51,8 @@ require("tokyonight").setup({
       variables = { bold = false },
       sidebars = "dark",
       floats = "dark",
+      sidebars = "transparent",
+      floats = "transparent",
   },
 })
 
@@ -222,7 +224,6 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.cmd.colorscheme("tokyonight")
-vim.cmd("TransparentEnable")
 vim.opt.fillchars = { eob = " " }
 vim.cmd('set number')
 vim.o.showmode = false
