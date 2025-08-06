@@ -31,6 +31,7 @@ require("lazy").setup({
   { 'akinsho/bufferline.nvim', version = "*", dependencies = { 'nvim-tree/nvim-web-devicons' }},
   { 'folke/flash.nvim' },
   { 'folke/tokyonight.nvim' },
+  { 'xiyaowong/transparent.nvim' }
 })
 
 -- Configuring plugins, tweak these as you want
@@ -221,6 +222,7 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.cmd.colorscheme("tokyonight")
+vim.cmd("TransparentEnable")
 vim.opt.fillchars = { eob = " " }
 vim.cmd('set number')
 vim.o.showmode = false
