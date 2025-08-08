@@ -203,7 +203,7 @@ vim.keymap.set('i', '<C-s>', '<ESC>:w<CR>i', opts)
 
 vim.keymap.set('n', '<Leader>f', ':FzfLua files<CR>', opts)
 vim.keymap.set('n', '<Leader>e', ':Neotree toggle<CR>', opts)
-vim.keymap.set('n', '<Leader>w', ':w<CR>', opts)
+vim.keymap.set('n', '<C-s>', ':w<CR>', opts)
 vim.keymap.set('n', '<Leader>l', ':Lazy<CR>', opts)  
 vim.keymap.set('n', '<Leader>n', ':nohl<CR>', opts) 
 
