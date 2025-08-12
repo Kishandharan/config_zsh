@@ -205,13 +205,6 @@ vim.keymap.set('n', '<Leader>f', ':FzfLua files<CR>', opts)
 vim.keymap.set('n', '<Leader>e', ':Neotree toggle<CR>', opts)
 vim.keymap.set('n', '<C-s>', ':w<CR>', opts)
 vim.keymap.set('n', '<Leader>l', ':Lazy<CR>', opts)  
-vim.keymap.set('n', '<Leader>n', ':nohl<CR>', opts) 
-
-vim.keymap.set('n', '<Leader><C-b>', '0', opts)  
-vim.keymap.set('n', '<Leader><C-e>', '$', opts)  
-vim.keymap.set('n', '<Leader><C-m>', '%', opts)  
-vim.keymap.set('n', '<Leader><C-n>', '}', opts)  
-vim.keymap.set('n', '<Leader><C-p>', '{', opts)  
 
 vim.keymap.set({ "n", "x", "o" }, "s", function()
   require("flash").jump()
@@ -228,4 +221,3 @@ vim.opt.fillchars = { eob = " " }
 vim.cmd('set number')
 vim.o.showmode = false
 vim.o.showtabline = 2
-
