@@ -45,6 +45,7 @@ vim.cmd("set ignorecase")
 require("catppuccin").setup({
     flavour = "mocha",
     auto_integrations = true,
+    no_italic = true
 })
 
 require("tokyonight").setup({
