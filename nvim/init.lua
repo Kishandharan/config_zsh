@@ -31,6 +31,7 @@ require("lazy").setup({
   { 'akinsho/bufferline.nvim', version = "*", dependencies = { 'nvim-tree/nvim-web-devicons' }},
   { 'folke/flash.nvim' },
   { 'folke/tokyonight.nvim' },
+  { 'catppuccin/nvim', name="catppuccin" }
 })
 
 -- Configuring plugins, tweak these as you want
@@ -40,6 +41,11 @@ vim.g.loaded_netrwPlugin = 1
 vim.o.laststatus = 3
 vim.opt.shortmess:append("I")
 vim.cmd("set ignorecase")
+
+require("catppuccin").setup({
+    flavour = "mocha",
+    auto_integrations = true,
+})
 
 require("tokyonight").setup({
   transparent = true,
