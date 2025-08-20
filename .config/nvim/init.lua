@@ -202,7 +202,7 @@ require("bufferline").setup({
 local opts = {noremap = true, silent = true}
 
 vim.keymap.set("", "<Space>", "<Nop>", opts)
-vim.g.mapLazyleader = " "
+vim.g.mapleader = " "
 
 vim.keymap.set('i', '<C-h>', '<Left>', opts)
 vim.keymap.set('i', '<C-j>', '<Down>', opts)
