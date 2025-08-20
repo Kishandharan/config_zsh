@@ -1,5 +1,5 @@
 ## Notes
-| Command | Installs What? |
+| Command | Installs/Changes What? |
 | :-:                                                   | :-:             |
 | sudo apt install fzf                                  | Installs fzf    |
 | sudo snap install tmux --classic                      | Installs Tmux   |
