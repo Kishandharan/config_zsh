@@ -30,8 +30,6 @@ require("lazy").setup({
   { 'folke/noice.nvim' },
   { 'akinsho/bufferline.nvim', version = "*", dependencies = { 'nvim-tree/nvim-web-devicons' }},
   { 'folke/flash.nvim' },
-  { 'folke/tokyonight.nvim', priority=1000 },
-  { 'catppuccin/nvim', name="catppuccin", priority=1000},
   { 'bluz71/vim-nightfly-colors' }
 })
 
@@ -43,28 +41,10 @@ vim.o.laststatus = 3
 vim.opt.shortmess:append("I")
 vim.cmd("set ignorecase")
 
-require("catppuccin").setup({
-    flavour = "mocha",
-    auto_integrations = true,
-    no_italic = true
-})
-
+vim.g.nightflyTransparent = true
 vim.g.nightflyWinSeparator = 3
+vim.g.nightflyItalics = false
 
-require("tokyonight").setup({
-  transparent = true,
-  style = "night",
-  styles = {
-      comments = { italic = false },
-      keywords = { italic = false },
-      functions = { bold = false },
-      variables = { bold = false },
-      sidebars = "dark",
-      floats = "dark",
-      sidebars = "transparent",
-      floats = "transparent",
-  },
-})
 
 require('neo-tree').setup({
   close_if_last_window = true,
@@ -114,7 +94,7 @@ cmp.setup({
 
 require('lualine').setup {
   options = {
-    theme = 'tokyonight',
+    theme = 'nightfly',
      section_separators = { left = '', right = '' },
     component_separators = { left = '', right = '' },
   },
@@ -229,7 +209,7 @@ vim.opt.autoindent = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
-vim.cmd.colorscheme("tokyonight")
+vim.cmd.colorscheme("nightfly")
 vim.opt.fillchars = { eob = " " }
 vim.cmd('set number')
 vim.o.showmode = false
