@@ -13,5 +13,6 @@
 | mkdir -p ~/.local/bin && curl -sS https://starship.rs/install.sh \| sh -s -- -b ~/.local/bin | Installs starship
 | sudo apt install stow                                 | Installs stow |
 | sudo apt install dos2unix                             | Installs dos2unix |
+| find {dirname} -type f -exec dos2unix {} +            | Converts all the files inside a directory to Unix Style |
 
    
