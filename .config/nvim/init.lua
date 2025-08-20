@@ -32,6 +32,7 @@ require("lazy").setup({
   { 'folke/flash.nvim' },
   { 'folke/tokyonight.nvim', priority=1000 },
   { 'catppuccin/nvim', name="catppuccin", priority=1000},
+  { 'bluz71/vim-nightfly-colors' }
 })
 
 -- Configuring plugins, tweak these as you want
@@ -47,6 +48,8 @@ require("catppuccin").setup({
     auto_integrations = true,
     no_italic = true
 })
+
+vim.g.nightflyWinSeparator = 3
 
 require("tokyonight").setup({
   transparent = true,
@@ -199,7 +202,7 @@ require("bufferline").setup({
 local opts = {noremap = true, silent = true}
 
 vim.keymap.set("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
+vim.g.mapLazyleader = " "
 
 vim.keymap.set('i', '<C-h>', '<Left>', opts)
 vim.keymap.set('i', '<C-j>', '<Down>', opts)
@@ -210,8 +213,11 @@ vim.keymap.set('i', '<C-s>', '<ESC>:w<CR>i', opts)
 
 vim.keymap.set('n', '<Leader>f', ':FzfLua files<CR>', opts)
 vim.keymap.set('n', '<Leader>e', ':Neotree toggle<CR>', opts)
-vim.keymap.set('n', '<C-s>', ':w<CR>', opts)
 vim.keymap.set('n', '<Leader>l', ':Lazy<CR>', opts)  
+vim.keymap.set('n', '<Leader>n', ':nohl<CR>', opts)  
+vim.keymap.set('n', '<C-s>', ':w<CR>', opts)
+vim.keymap.set('n', 'pn', '}', opts)  
+vim.keymap.set('n', 'pp', '{', opts)  
 
 vim.keymap.set({ "n", "x", "o" }, "s", function()
   require("flash").jump()
