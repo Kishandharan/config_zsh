@@ -41,10 +41,13 @@ vim.o.laststatus = 3
 vim.opt.shortmess:append("I")
 vim.cmd("set ignorecase")
 
-vim.g.nightflyTransparent = true
+vim.g.nightflyTransparent = false -- Can be set to true if wanted.
 vim.g.nightflyWinSeparator = 3
 vim.g.nightflyItalics = false
-
+vim.g.nightflyNormalFloat = true
+require("nightfly").custom_colors({ -- This block should be removed or commented if transprancy = true 
+  bg = "#08091a", 
+})
 
 require('neo-tree').setup({
   close_if_last_window = true,
@@ -104,7 +107,7 @@ require('lualine').setup {
     lualine_c = {},        
     lualine_x = {},       
     lualine_y = {},      
-    lualine_z = {'location'},
+    lualine_z = {},
   },
 }
 
@@ -159,7 +162,6 @@ require("noice").setup({
   },
 })
 
-vim.api.nvim_set_hl(0, "BufferLineFill", { bg = "#1c1f2e" })
 require("bufferline").setup({
  
   options = {
