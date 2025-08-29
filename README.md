@@ -159,7 +159,7 @@ Note that I have removed ALL the default keybinds and added my own afresh.
 | SPACE | In copy mode, this starts the selection |                        
 | ESC | Cancels selection in copy mode without getting out of copy mode |                        
 | q | In copy mode, quits copy mode |                        
-| y | Copies selection in copy mode |                        
+| y | Copies selection in copy mode and quits it |                        
 | PREFIX p | Pastes copied selection from copy mode |                        
 | PREFIX C | Opens tmux command prompt |                         
 | PREFIX S | Toggles statusbar visibility |                        
