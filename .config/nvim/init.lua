@@ -174,7 +174,7 @@ require("bufferline").setup({
     separator_style = { "|", "|" },
     show_close_icon = true,
     show_buffer_close_icons = true,
-    always_show_bufferline=false,
+    always_show_bufferline=true,
     diagnostics = "nvim_lsp",
     underline_selected = true,
   },
@@ -198,10 +198,10 @@ vim.keymap.set('n', '<Leader>e', ':Neotree toggle<CR>', opts)
 vim.keymap.set('n', '<Leader>l', ':Lazy<CR>', opts)  
 vim.keymap.set('n', '<Leader>n', ':nohl<CR>', opts)  
 vim.keymap.set('n', '<C-s>', ':w<CR>', opts)
-vim.keymap.set('n', 'pj', '}', opts)  
-vim.keymap.set('n', 'pk', '{', opts)  
-vim.keymap.set('n', 'bl', ':bnext<CR>', opts)
-vim.keymap.set('n', 'bh', ':bprev<CR>', opts)
+vim.keymap.set('n', 'sn', '}', opts)  
+vim.keymap.set('n', 'sp', '{', opts)  
+vim.keymap.set('n', 'tn', ':bnext<CR>', opts)
+vim.keymap.set('n', 'tp', ':bprev<CR>', opts)
 
 vim.keymap.set({ "n", "x", "o" }, "s", function()
   require("flash").jump()
