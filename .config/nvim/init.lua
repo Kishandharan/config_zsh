@@ -203,8 +203,6 @@ vim.keymap.set('n', '<Leader>e', ':Neotree toggle<CR>', opts)
 vim.keymap.set('n', '<Leader>l', ':Lazy<CR>', opts)  
 vim.keymap.set('n', '<Leader>n', ':nohl<CR>', opts)  
 vim.keymap.set('n', '<C-s>', ':w<CR>', opts)
-vim.keymap.set('n', 'sn', '}', opts)  
-vim.keymap.set('n', 'sp', '{', opts)  
 vim.keymap.set('n', 'tn', ':bnext<CR>', opts)
 vim.keymap.set('n', 'tp', ':bprev<CR>', opts)
 
