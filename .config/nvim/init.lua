@@ -30,7 +30,7 @@ require("lazy").setup({
   { 'folke/noice.nvim' },
   { 'akinsho/bufferline.nvim', version = "*", dependencies = { 'nvim-tree/nvim-web-devicons' }},
   { 'folke/flash.nvim' },
-  { 'bluz71/vim-nightfly-colors' }
+  { 'bluz71/vim-nightfly-colors' },
 })
 
 -- Configuring plugins, tweak these as you want
@@ -205,6 +205,9 @@ vim.keymap.set('n', '<Leader>n', ':nohl<CR>', opts)
 vim.keymap.set('n', '<C-s>', ':w<CR>', opts)
 vim.keymap.set('n', 'tn', ':bnext<CR>', opts)
 vim.keymap.set('n', 'tp', ':bprev<CR>', opts)
+vim.keymap.set('n', 'g', '`', opts)
+vim.keymap.set('o', 'g', '`', opts)
+vim.keymap.set('x', 'g', '`', opts)
 
 vim.keymap.set({ "n", "x", "o" }, "s", function()
   require("flash").jump()
