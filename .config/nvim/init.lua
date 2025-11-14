@@ -126,6 +126,7 @@ vim.opt.foldenable = false
 
 vim.notify = require("notify")
 require("notify").setup({
+  timeout = 100,
   stages = "fade",
 })
 
