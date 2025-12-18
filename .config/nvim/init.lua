@@ -17,7 +17,6 @@ require("lazy").setup({
   { 'nvim-lua/plenary.nvim' },
   { 'nvim-tree/nvim-web-devicons' },
   { 'MunifTanjim/nui.nvim' },
-  { 'nvim-neo-tree/neo-tree.nvim', branch = 'v3.x' },
   { 'hrsh7th/cmp-buffer' },
   { 'hrsh7th/nvim-cmp' },
   { 'L3MON4D3/LuaSnip' },
@@ -31,7 +30,7 @@ require("lazy").setup({
   { 'akinsho/bufferline.nvim', version = "*", dependencies = { 'nvim-tree/nvim-web-devicons' }},
   { 'folke/flash.nvim' },
   { 'bluz71/vim-nightfly-colors' },
-  { 'stevearc/oil.nvim', lazy=false }
+  { 'stevearc/oil.nvim'}
 })
 
 -- Configuring plugins, tweak these as you want
@@ -50,27 +49,6 @@ vim.g.nightflyItalics = false
 vim.g.nightflyNormalFloat = true
 require("nightfly").custom_colors({ -- This block should be removed or commented if transprancy = true 
   bg = "#08091a", 
-})
-
-require('neo-tree').setup({
-  close_if_last_window = true,
-  popup_border_style = "rounded",
-  enable_git_status = true,
-  enable_diagnostics = true,
-  filesystem = {
-    filtered_items = {
-      visible = true,
-      hide_dotfiles = false,
-      hide_gitignored = false,
-    },
-    follow_current_file = {
-      enabled = true,
-    },
-  },
-  window = {
-    position = "left",
-    width = 30,
-  },
 })
 
 require("luasnip.loaders.from_vscode").lazy_load()
@@ -114,7 +92,7 @@ require('lualine').setup {
   },
 }
 
-require('nvim-treesitter.configs').setup {
+require('nvim-treesitter.config').setup {
   ensure_installed = { "lua", "python", "javascript", "cpp"},
   highlight = {
     enable = true,
@@ -203,8 +181,7 @@ vim.keymap.set('o', 'kj', '<ESC>', opts)
 vim.keymap.set('i', '<C-s>', '<ESC>:w<CR>i', opts)
 
 vim.keymap.set('n', '<Leader>f', ':FzfLua files<CR>', opts)
-vim.keymap.set('n', '<Leader>e', ':Neotree toggle<CR>', opts)
-vim.keymap.set('n', '<Leader>o', ':Oil .<CR>', opts)  
+vim.keymap.set('n', '<Leader>e', ':Oil .<CR>', opts)
 vim.keymap.set('n', '<Leader>l', ':Lazy<CR>', opts)  
 vim.keymap.set('n', '<Leader>n', ':nohl<CR>', opts)  
 vim.keymap.set('n', '<C-s>', ':w<CR>', opts)
