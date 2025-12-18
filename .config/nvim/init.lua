@@ -42,6 +42,8 @@ vim.o.laststatus = 3
 vim.opt.shortmess:append("I")
 vim.cmd("set ignorecase")
 
+require("oil").setup()
+
 vim.g.nightflyTransparent = false -- Can be set to true if wanted.
 vim.g.nightflyWinSeparator = 3
 vim.g.nightflyItalics = false
