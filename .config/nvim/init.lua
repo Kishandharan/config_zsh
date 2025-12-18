@@ -31,6 +31,7 @@ require("lazy").setup({
   { 'akinsho/bufferline.nvim', version = "*", dependencies = { 'nvim-tree/nvim-web-devicons' }},
   { 'folke/flash.nvim' },
   { 'bluz71/vim-nightfly-colors' },
+  { 'stevearc/oil.nvim', lazy=false }
 })
 
 -- Configuring plugins, tweak these as you want
