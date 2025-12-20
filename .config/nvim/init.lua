@@ -18,7 +18,11 @@ require("lazy").setup({
     { "stevearc/oil.nvim" },
     { "nvim-tree/nvim-web-devicons" },
     { "bluz71/vim-nightfly-colors" },
-    { "folke/flash.nvim" }
+    { "folke/flash.nvim" },
+    { "akinsho/bufferline.nvim", version = "*" },
+    { "nvim-lualine/lualine.nvim" },
+    { 'rcarriga/nvim-notify' },
+    { 'folke/noice.nvim' },
 })
 
 -- Configure Plugins and Required settings
@@ -37,6 +41,72 @@ vim.g.nightflyItalics = false
 vim.g.nightflyNormalFloat = true
 require("nightfly").custom_colors({ -- This block should be removed or commented if transprancy = true 
   bg = "#08091a", 
+})
+
+require("bufferline").setup({
+  options = {
+    separator_style = { "|", "|" },
+    show_close_icon = true,
+    show_buffer_close_icons = true,
+    always_show_bufferline=true,
+    diagnostics = "nvim_lsp",
+    underline_selected = true,
+  },
+})
+
+require('lualine').setup {
+  options = {
+    theme = 'nightfly',
+     section_separators = { left = '', right = '' },
+    component_separators = { left = '', right = '' },
+  },
+  sections = {
+    lualine_a = {'mode'},   
+    lualine_b = {'filename'},
+    lualine_c = {},        
+    lualine_x = {},       
+    lualine_y = {},      
+    lualine_z = {},
+  },
+}
+
+vim.notify = require("notify")
+require("notify").setup({
+  timeout = 100,
+  stages = "fade",
+})
+
+require("noice").setup({
+  notify = { enabled = true },
+  lsp = {
+    override = {
+      ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+      ["vim.lsp.util.stylize_markdown"] = true,
+      ["cmp.entry.get_documentation"] = true,
+    },
+  },
+  presets = {
+    bottom_search = false,
+    command_palette = true,
+    long_message_to_split = true,
+    inc_rename = false,
+    lsp_doc_border = false,
+  },
+  views = {
+    cmdline_popup = {
+      position = { row = 5, col = "50%" },
+      size = { width = 60, height = "auto" },
+      border = { style = "rounded", padding = { 1, 2 } },
+      win_options = { winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" } },
+    },
+    popupmenu = {
+      relative = "editor",
+      position = { row = 8, col = "50%" },
+      size = { width = 60, height = 10 },
+      border = { style = "rounded", padding = { 0, 1 } },
+      win_options = { winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" } },
+    },
+  },
 })
 
 -- Keymaps
